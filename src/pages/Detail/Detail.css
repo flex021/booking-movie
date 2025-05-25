@@ -1,0 +1,11 @@
+.blur {
+    padding-top: 150px; /* Giữ nguyên padding-top */
+    min-height: 150vh; /* Giữ nguyên min-height */
+    background: rgba(255, 255, 255, 0.1); /* Nền trong suốt, dựa trên effectColor #fff */
+    backdrop-filter: blur(6px); /* Độ mờ 10px như giá trị blur */
+    -webkit-backdrop-filter: blur(6px); /* Hỗ trợ Webkit */
+    border-radius: 0; /* Bo góc 0px như giá trị borderRadius */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Viền sáng nhẹ */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bóng nhẹ */
+    color: #fff; /* Màu chữ trắng như giá trị color */
+}

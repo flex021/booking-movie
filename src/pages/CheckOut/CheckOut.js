@@ -55,7 +55,7 @@ function CheckOut(props) {
       }
       return <Fragment key={index}>
         <button onClick={() => {
-          const action = datGheAction(ghe, props.match.params.id)      
+          const action = datGheAction(ghe, props.match.params.id)
           dispatch(action)
         }} disabled={ghe.daDat || classGheKhachDat !== ''} className={`ghe ${classGheVip} ${classGheDaDat} ${classGheDangDat} ${classGheDaDuocDat} ${classGheKhachDat}`}>{ghe.daDat ? classGheDaDuocDat != '' ? <UserOutlined /> : <p className='text-lg text-black'>X</p> : classGheKhachDat !== '' ? <AliwangwangOutlined className='text-lg' /> : ghe.stt}</button>
         {(index + 1) % 16 === 0 ? <br /> : ''}
@@ -77,7 +77,7 @@ function CheckOut(props) {
         </div>
 
         <div className='col-span-4'>
-          <div className='px-5 py-2 text-center font-medium border border-b-4 border-l-4 border-black rounded-lg shadow-lg hover:shadow-sm'>
+          <div className='px-5 py-2 text-center font-medium border bg-white border-b-4 border-l-4 border-black rounded-lg shadow-lg hover:shadow-sm'>
             <h3 className='text-green-400 text-center text-2xl mb-3'>{danhSachGheDangDat.reduce((tongTien, ghe, index) => {
               return tongTien += ghe.giaVe
             }, 0).toLocaleString()}đ</h3>
@@ -102,7 +102,7 @@ function CheckOut(props) {
               <div className='font-semibold'>
                 <span className='text-green-400'>Giá</span>
                 <div className='text-green-800 '>
-                  {danhSachGheDangDat.reduce((tongTien, ghe, index) => {     
+                  {danhSachGheDangDat.reduce((tongTien, ghe, index) => {
                     return tongTien += ghe.giaVe
                   }, 0).toLocaleString()}đ
                 </div>
@@ -143,27 +143,27 @@ function CheckOut(props) {
       <hr className='border-2 w-full my-4' />
       <div className="grid grid-cols-5 gap-2 mb-5 container">
         <div>
-          <span className='font-medium text-sm'>
+          <span className='font-medium text-sm text-white'>
             <span className='ghe p-2'><CheckOutlined className='text-sm' /></span>: Ghế chưa đặt
           </span>
         </div>
         <div>
-          <span className='font-medium text-sm'>
+          <span className='font-medium text-sm text-white'>
             <span className='gheDaDat ghe py-2 px-2.5'><span className='text-sm text-black'>X</span></span>: Ghế đã được đặt
           </span>
         </div>
         <div>
-          <span className='font-medium text-sm'>
+          <span className='font-medium text-sm text-white'>
             <span className='gheVip ghe p-2'><CheckOutlined className='text-sm' /></span>: Ghế VIP
           </span>
         </div>
         <div>
-          <span className='font-medium text-sm'>
+          <span className='font-medium text-sm text-white'>
             <span className='gheDaDuocDat ghe py-2 px-2.5'><UserOutlined className='text-sm' /></span>: Ghế của bạn
           </span>
         </div>
         <div>
-          <span className='font-medium text-sm'>
+          <span className='font-medium text-sm text-white'>
             <span className='gheKhachDat ghe p-2'><AliwangwangOutlined className='text-base' /></span>: Ghế khách đang đặt
           </span>
         </div>
@@ -199,11 +199,11 @@ export default function (props) {
   const OperationsSlot = {
     right: <button className="inline-flex items-center px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white text-sm font-medium rounded-md" onClick={() => {
       dispatch({
-          type: RESET_TAB_ACTIVE, // Reset tabActive về "1"
-        });
+        type: RESET_TAB_ACTIVE, // Reset tabActive về "1"
+      });
       history.push('/')
-  }}><HomeOutlined className='mr-2' /> Home</button>
-    
+    }}><HomeOutlined className='mr-2' /> Home</button>
+
   };
 
   const [position, setPosition] = useState(['left', 'right']);
@@ -218,17 +218,25 @@ export default function (props) {
     );
   }, [position]);
 
-  return <div className='p-2'>
-    <Tabs defaultActiveKey="1" tabBarExtraContent={slot} activeKey={tabActive} items={items} onChange={(key) => {
-      console.log(key);
-      dispatch({
-        type: CHUYEN_TAB_ACTIVE,
-        number: key.toString()
-      })
+  return <div className="h-screen w-screen overflow-x-hidden" style={{ background: 'url("https://static.vecteezy.com/system/resources/thumbnails/001/227/422/small_2x/cinema-movie-theater-with-blank-screen-and-red-seat.jpg")', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
+    <div className='blur-checkout'>
+      <Tabs defaultActiveKey="1"
+      tabBarStyle={{background: '#FCFCFC', padding: '8px 15px 8px 15px', fontWeight: 500}}
+      tabBarExtraContent={slot}
+      activeKey={tabActive}
+      items={items}
+      onChange={(key) => {
+        console.log(key);
+        dispatch({
+          type: CHUYEN_TAB_ACTIVE,
+          number: key.toString()
+        })
 
-    }} />
+      }} />
+    </div>
   </div>
 }
+
 
 
 
@@ -245,7 +253,7 @@ function KetQuaDatVe(props) {
       const seats = _.first(ticket.danhSachGhe);
 
       return <div key={index} className="p-2 lg:w-1/3 md:w-1/2 w-full">
-        <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+        <div className="h-full flex items-center bg-white border-gray-200 border p-4 rounded-lg">
           <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={ticket.hinhAnh} />
           <div className="flex-grow">
             <p className="text-gray-900 mb-2 text-xl title-font">{ticket.tenPhim}</p>

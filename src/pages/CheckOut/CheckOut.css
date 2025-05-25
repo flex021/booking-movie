@@ -49,4 +49,28 @@
     background-color: rgb(83, 74, 74);
     cursor: no-drop;
   }
-  
+
+  .blur-checkout {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: black !important; 
+  outline: none;
+}
+.ant-tabs-ink-bar {
+  background: black !important;
+}
+
+.ant-tabs-tab:hover {
+  color: black !important; 
+}
+
+.ant-tabs-tab:focus {
+  outline: none;
+  color: white !important;
+}

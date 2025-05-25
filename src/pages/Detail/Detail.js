@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { CustomCard } from '@tsamantanis/react-glassmorphism'
-import '@tsamantanis/react-glassmorphism/dist/index.css'
 import '../../assets/styles/circle.css'
 import { useDispatch, useSelector } from 'react-redux'
 import moment from 'moment'
@@ -12,12 +10,13 @@ import { history } from '../../App'
 import { USER_LOGIN } from '../../util/settings/config'
 import { Modal } from 'antd';
 import ReactPlayer from 'react-player'
+import './Detail.css'
 
 export default function Detail(props) {
 
   const { filmDetail } = useSelector(state => state.QuanLyPhimReducer)
   console.log('detail film', filmDetail);
-  
+
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
@@ -50,7 +49,7 @@ export default function Detail(props) {
             children: <div>
               {rap.cumRapChieu?.map((cumRap, index) => {
                 console.log('cụm rạp', cumRap);
-                
+
                 return <div key={index} className='mb-4'>
                   <Collapse>
                     <Panel
@@ -105,13 +104,7 @@ export default function Detail(props) {
 
   return (
     <div style={{ backgroundImage: `url(${filmDetail.hinhAnh})`, backgroundSize: '100%', backgroundPosition: 'center', minHeight: '100vh' }}>
-      <CustomCard
-        style={{ paddingTop: '150px', minHeight: '150vh' }}
-        effectColor="#fff" // required
-        color="#fff" // default color is white
-        blur={10} // default blur value is 10px
-        borderRadius={0} // default border radius value is 10px
-      >
+      <div className='blur'>
         <div className='container'>
           <div className='grid grid-cols-12 p-6 rounded-xl' style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
             <div className='col-span-2 col-start-2'>
@@ -166,7 +159,7 @@ export default function Detail(props) {
 
           </div>
         </div>
-      </CustomCard>
+      </div>
     </div>
   )
 }

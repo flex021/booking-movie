@@ -12,7 +12,7 @@ import Register from './pages/Register/Register';
 import Detail from './pages/Detail/Detail';
 import { CheckOutTemplate } from './templates/CheckOutTemplate/CheckOutTemplate';
 import CheckOut from './pages/CheckOut/CheckOut';
-import { UserTemplate } from './templates/UserTemplate/UserTempalte';
+import { UserTemplate } from './templates/UserTemplate/UserTemplate';
 import Loading from './components/Loading/Loading';
 import { AdminTemplate } from './templates/AdminTemplate/AdminTemplate';
 import ShowTime from './pages/Admin/ShowTime/ShowTime';

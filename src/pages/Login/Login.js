@@ -24,11 +24,11 @@ export default function Login(props) {
     <div>
       <form onSubmit={formik.handleSubmit} className='formLogin' >
       <h3>ĐĂNG NHẬP</h3>
-      <label className='labelLogin' htmlFor="username">Tài khoản</label>
+      <label className='labelLogin' htmlFor="username">Tài khoản "123test"</label>
       <input className='inputFix' type="text" placeholder="Tài khoản" name="taiKhoan" onChange={formik.handleChange}/>
       
 
-      <label className='labelLogin' htmlFor="password">Mật khẩu</label>
+      <label className='labelLogin' htmlFor="password">Mật khẩu "123456"</label>
       <input className='inputFix' type="password" placeholder="Mật khẩu" name="matKhau" onChange={formik.handleChange}/>
 
 
