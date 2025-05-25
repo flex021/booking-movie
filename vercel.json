@@ -17,6 +17,6 @@
   ],
   "installCommand": "npm install --force",
   "buildCommand": "npm run build",
-  "nodeVersion": "18.x",
+  "nodeVersion": "18.17.0",
   "cache": false
 }
