@@ -15,7 +15,7 @@
       "dest": "/$1"
     }
   ],
-  "installCommand": "npm install",
+  "installCommand": "npm install --legacy-peer-deps",
   "buildCommand": "npm run build",
   "nodeVersion": "18.x",
   "cache": false
