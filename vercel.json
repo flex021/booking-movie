@@ -16,6 +16,5 @@
     }
   ],
   "installCommand": "npm install --force",
-  "buildCommand": "npm run build",
-  "cache": false
+  "buildCommand": "npm run build"
 }
