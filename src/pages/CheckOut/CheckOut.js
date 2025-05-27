@@ -218,6 +218,7 @@ export default function (props) {
     );
   }, [position]);
 
+  //comment
   return <div className="h-screen w-screen overflow-x-hidden" style={{ background: 'url("https://static.vecteezy.com/system/resources/thumbnails/001/227/422/small_2x/cinema-movie-theater-with-blank-screen-and-red-seat.jpg")', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
     <div className='blur-checkout'>
       <Tabs defaultActiveKey="1"
